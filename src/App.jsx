@@ -5,10 +5,10 @@ import styled from "styled-components";
 import { NavbarInfo } from "./components/info-navbar";
 import { Index } from "./pages/index";
 import { Signin } from "./pages/sign-in";
-import { Dashboard } from "./pages/Dashboard/dashboard-layout";
-import { ProductosMenu } from "./pages/Dashboard/productos-menu";
-import { VentasMenu } from "./pages/Dashboard/ventas-menu";
-import { PagosMenu } from "./pages/Dashboard/pagos-menu";
+import { Dashboard } from "@/pages/dashboard/dashboard-layout";
+import { ProductosMenu } from "@/pages/dashboard/productos-menu";
+import { VentasMenu } from "@/pages/dashboard/ventas-menu";
+import { PagosMenu } from "@/pages/dashboard/pagos-menu";
 
 import "./styles.css";
 

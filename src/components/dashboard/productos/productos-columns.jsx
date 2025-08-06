@@ -32,7 +32,7 @@ import {
   eliminarProducto,
   establecerCantidadProducto,
   obtenerCantidadProducto,
-} from "../../../pages/Dashboard/ventas/ventas-form";
+} from "@/pages/dashboard/ventas/ventas-form";
 import { currencyFormat } from "../../commerce/productos/producto-card";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Input } from "../../ui/input";
