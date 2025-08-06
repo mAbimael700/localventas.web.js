@@ -276,10 +276,10 @@ export const PagosForm = () => {
 
       <Separator />
 
-      <div className="grid grid-cols-6 gap-x-5 pb-5">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-5 pb-5">
         {(ventaIdData || ventaSelected) &&
         (ventaIdData?.estado === true || ventaSelected?.estado === true) ? (
-          <div className="col-span-2 text-sm flex h-7 items-center gap-2">
+          <div className="md:col-span-2 text-sm flex h-7 items-center gap-2">
             <CheckCircledIcon className="text-green-400" /> Esta venta ya ha
             sido pagada.
           </div>
@@ -287,7 +287,7 @@ export const PagosForm = () => {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-5 col-span-2"
+              className="space-y-5 md:col-span-2"
             >
               <FormField
               control={form.control}
@@ -577,7 +577,7 @@ export const PagosForm = () => {
           </Form>
         )}
 
-        <section className="h-full  col-span-4">
+        <section className="h-full  md:col-span-4">
           <Tabs defaultValue="info">
             <TabsList>
               <TabsTrigger value="info">Información</TabsTrigger>

@@ -30,14 +30,29 @@ import { AlertDestructiveError } from "@/components/alert-error";
 import { getMarcaById } from "@/services/marcas";
 import { useProductosMenu } from "@/hooks/dashboard/productos/useProductosMenu";
 
+
+const marcaSchema = z.object({
+  nombre: z.string().min(2),
+  codigo: z
+      .string()
+      .min(2)
+      .refine((str) => str.toUpperCase()),
+});
+
+
 export const MarcasSheetForm = () => {
   const {
     openMarcaForm: open,
     openChangeMarcaForm: openChange,
     marcaSelected,
   } = useProductosMenu();
+  const auth = useAuth();
+  const form = useForm({
+    resolver: zodResolver(marcaSchema),
+    defaultValues: { nombre: "", codigo: "" },
+  });
+  const { tienda } = useParams();
   const {toast} = useToast()
-
   const isUpdate = Object.keys(marcaSelected).length > 0;
   const [error, setError] = useState("");
 
@@ -50,20 +65,6 @@ export const MarcasSheetForm = () => {
     }
   }, [form, open]);
 
-  const marcaSchema = z.object({
-    nombre: z.string().min(2),
-    codigo: z
-      .string()
-      .min(2)
-      .refine((str) => str.toUpperCase()),
-  });
-
-  const auth = useAuth();
-  const form = useForm({
-    resolver: zodResolver(marcaSchema),
-    defaultValues: { nombre: "", codigo: "" },
-  });
-  const { tienda } = useParams();
 
   async function onSubmit(data) {
     const { nombre, codigo } = data;

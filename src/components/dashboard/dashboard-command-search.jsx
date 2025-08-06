@@ -47,6 +47,7 @@ const dashboardModules = [
 
 export function CommandSearch() {
   const goTo = useNavigate();
+
   return (
     <Dialog>
       <DialogTrigger
@@ -55,8 +56,10 @@ export function CommandSearch() {
           className: "text-muted-foreground shadow-sm font-normal h-9 md:w-[250px]",
         })}
       >
-        <span className=" w-full flex items-center gap-2">
-           <MagnifyingGlassIcon /> Buscar módulo...
+           <MagnifyingGlassIcon />
+        <span className="hidden md:block w-full items-center gap-2">
+
+          Buscar módulo...
         </span>
        
       </DialogTrigger>

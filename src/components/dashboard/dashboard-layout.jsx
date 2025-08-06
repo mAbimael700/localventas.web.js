@@ -97,7 +97,7 @@ export const Dashboard = () => {
         </div>
       </div>
 
-      <div className="w-screen px-6 space-y-3 pt-4 ">
+      <div className="w-screen p-3 md:px-6 space-y-3 pt-4 ">
         <Outlet />
       </div>
     </>
