@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
   productosColumns,
   columnProductOptions,
-} from "../../../components/dashboard/productos/productos-columns";
+} from "../../../components/dashboard/productos/productos-columns.jsx";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { getMarcasByTienda } from "../../../services/marcas";
 import { getCategoriasByTienda } from "../../../services/categorias";
