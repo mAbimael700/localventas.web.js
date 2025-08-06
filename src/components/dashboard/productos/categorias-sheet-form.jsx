@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Toaster } from "@/components/ui/Toaster";
+
 import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
 import {
@@ -19,7 +19,6 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
-  CommandSeparator,
 } from "@/components/ui/command";
 import {
   Popover,
@@ -41,13 +40,14 @@ import * as z from "zod";
 import { ChevronsUpDown, Check } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useAuth } from "../../../auth/auth-provider";
+import { useAuth } from "@/auth/auth-provider.jsx";
 import {
   createCategoriasByTienda,
   getCategoriaById,
   getCategoriasByTienda,
-} from "../../../services/categorias";
-import { API_URL } from "../../../auth/constants";
+} from "@/services/categorias.js";
+import { API_URL } from "@/auth/constants.js";
+import {Skeleton} from "@/components/ui/skeleton.jsx";
 
 export const CategoriasSheetForm = ({
   open,
@@ -451,7 +451,6 @@ export const CategoriasSheetForm = ({
             </form>
           </Form>
         </div>
-        <Toaster />
       </SheetContent>
     </Sheet>
   );

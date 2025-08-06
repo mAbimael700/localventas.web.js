@@ -30,7 +30,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Check, ChevronsUpDown, PlusCircleIcon, Save } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
-import { Toaster } from "@/components/ui/Toaster";
 import { ToastAction } from "@/components/ui/toast";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
@@ -1404,7 +1403,6 @@ export const ProductoForm = ({
         setPosted={setCategoriaPosted}
         posted={categoriaPosted}
       />
-      <Toaster />
     </div>
   );
 };

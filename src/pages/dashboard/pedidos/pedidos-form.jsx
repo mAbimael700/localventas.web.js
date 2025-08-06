@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 import { Button, buttonVariants } from "@/components/ui/button";
 
-import { Toaster } from "@/components/ui/toaster";
+
 import { useToast } from "@/components/ui/use-toast";
 
 import { NavigatePreviousButton } from "../../../components/form/navigate-previous-button";
@@ -541,8 +541,6 @@ export const PedidosForm = ({
             </TabsContent>
           </Tabs>
         </section>
-
-        <Toaster />
       </div>
     </div>
   );

@@ -54,7 +54,6 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 
-import { Toaster } from "@/components/ui/Toaster";
 import { Check, ChevronsUpDown, MapPinIcon } from "lucide-react";
 import { PlusCircledIcon, TrashIcon } from "@radix-ui/react-icons";
 import { getEstadosByPais, getPaises } from "../../../services/direcciones";
@@ -656,8 +655,6 @@ export const DashboardConfiguracionDirecciones = () => {
           )}
         </form>
       </Form>
-
-      <Toaster />
       <pre className="mt-2 hidden  rounded-md bg-slate-950 p-4">
         <code className="text-white">
           {JSON.stringify(form.watch("direcciones"), null, 2)}

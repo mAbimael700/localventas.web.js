@@ -1,4 +1,3 @@
-import { Toaster } from "@/components/ui/Toaster";
 import { toast } from "@/components/ui/use-toast";
 
 import { createContext, useEffect, useReducer } from "react";
@@ -275,8 +274,6 @@ export const ShoppingCartProvider = ({ children }) => {
   return (
     <ShoppingCartContext.Provider value={values}>
       {children}
-
-      <Toaster />
     </ShoppingCartContext.Provider>
   );
 };

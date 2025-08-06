@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Toaster } from "@/components/ui/Toaster";
 import { useToast } from "@/components/ui/use-toast";
 
 import {
@@ -31,7 +30,7 @@ import { AlertDestructiveError } from "@/components/alert-error";
 import { getMarcaById } from "@/services/marcas";
 import { useProductosMenu } from "@/hooks/dashboard/productos/useProductosMenu";
 
-export const MarcasSheetForm = ({}) => {
+export const MarcasSheetForm = () => {
   const {
     openMarcaForm: open,
     openChangeMarcaForm: openChange,
@@ -49,7 +48,7 @@ export const MarcasSheetForm = ({}) => {
         codigo: "",
       });
     }
-  }, [open]);
+  }, [form, open]);
 
   const marcaSchema = z.object({
     nombre: z.string().min(2),
@@ -239,7 +238,6 @@ export const MarcasSheetForm = ({}) => {
             </form>
           </Form>
         </div>
-        <Toaster />
       </SheetContent>
     </Sheet>
   );

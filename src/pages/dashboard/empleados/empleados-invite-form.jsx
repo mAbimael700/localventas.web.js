@@ -17,7 +17,6 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Link, useParams } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
-import { Toaster } from "@/components/ui/Toaster";
 import { ToastAction } from "@/components/ui/toast";
 import Ilustration from "@/assets/employee-illustration.jpg";
 import { NavigatePreviousButton } from "../../../components/form/navigate-previous-button";
@@ -155,7 +154,6 @@ export const EmpleadosInviteForm = () => {
           </picture>
         </form>
       </Form>
-      <Toaster />
     </div>
   );
 };

@@ -55,7 +55,6 @@ import { currencyFormat } from "../../../components/commerce/productos/producto-
 import { UserInfo } from "../../../components/user/user-info";
 import { getUserNavName } from "../../../utils/get-user-nav-name";
 import { useToast } from "@/components/ui/use-toast";
-import { Toaster } from "@/components/ui/toaster";
 import "react-lazy-load-image-component/src/effects/opacity.css";
 import { API_URL } from "../../../auth/constants";
 import { useAuth } from "../../../auth/auth-provider";
@@ -794,8 +793,6 @@ export const VentasForm = () => {
             </form>
           </Form>
         </section>
-
-        <Toaster />
       </main>
     </div>
   );

@@ -1,6 +1,5 @@
 import { SearchIcon } from "lucide-react";
-import React from "react";
-import { Search } from "../../search-input";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate, useParams } from "react-router-dom";
@@ -11,20 +10,15 @@ import { z } from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
+
   FormField,
   FormItem,
-  FormLabel,
-  FormMessage,
+
 } from "@/components/ui/form";
-import { toast } from "@/components/ui/use-toast";
-import { Toaster } from "@/components/ui/toaster";
-import { getProductosByTienda } from "../../../services/productos";
+
 
 export const ProductsSearch = () => {
   const goTo = useNavigate();
-
-  const { tienda } = useParams();
   const FormSchema = z.object({
     search: z.string().optional(),
   });
@@ -63,7 +57,6 @@ export const ProductsSearch = () => {
                     <SearchIcon className="h-5 w-5" />
                   </Button>
 
-                  <Toaster />
                 </div>
               </FormControl>
             </FormItem>

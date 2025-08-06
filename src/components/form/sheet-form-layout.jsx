@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/sheet";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Toaster } from "@/components/ui/Toaster";
 import { useToast } from "@/components/ui/use-toast";
 
 import {
@@ -93,7 +92,6 @@ export function SheetDemo(schema, onSubmitFn) {
             </SheetFooter>
           </Form>
         </div>
-        <Toaster />
       </SheetContent>
     </Sheet>
   );

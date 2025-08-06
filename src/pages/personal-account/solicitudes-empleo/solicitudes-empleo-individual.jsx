@@ -3,17 +3,17 @@ import React, { useEffect, useState } from "react";
 import {
   getSolicitudesEmpleoById,
   responseSolicitudEmpleo,
-} from "../../../services/solicitudes-empleo";
+} from "@/services/solicitudes-empleo.js";
 import { useNavigate, useParams } from "react-router-dom";
-import { useAuth } from "../../../auth/auth-provider";
+import { useAuth } from "@/auth/auth-provider.jsx";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import { NavigatePreviousButton } from "../../../components/form/navigate-previous-button";
+import { NavigatePreviousButton } from "@/components/form/navigate-previous-button.jsx";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { LazyCargandoLoader } from "../../../components/loaders/lazy-text-loader";
+import { LazyCargandoLoader } from "@/components/loaders/lazy-text-loader.jsx";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -26,12 +26,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { toast } from "@/components/ui/use-toast";
 import { CheckCircledIcon, CrossCircledIcon } from "@radix-ui/react-icons";
 import { Badge } from "@/components/ui/badge";
 
 import { useToast } from "@/components/ui/use-toast";
-import { Toaster } from "@/components/ui/Toaster";
 import { ToastAction } from "@/components/ui/toast";
 
 export const SolicitudesEmpleoIndividual = () => {

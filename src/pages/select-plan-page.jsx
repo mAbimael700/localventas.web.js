@@ -5,7 +5,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ShoppingBag, Store } from "lucide-react";
 import { AuthUserFormLayout } from "./auth-user-form-layout";
 import { useLocation } from "react-router-dom";
-import { Toaster } from "@/components/ui/toaster";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -170,7 +169,6 @@ export const SelectPlanPage = () => {
         </form>
       </Form>
 
-      <Toaster />
     </AuthUserFormLayout>
   );
 };

@@ -19,7 +19,6 @@ import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
 
 import { useToast } from "@/components/ui/use-toast";
-import { Toaster } from "@/components/ui/Toaster";
 import { getTiendaById, updateTienda } from "../../../services/tiendas";
 import { useAuth } from "../../../auth/auth-provider";
 import { useEffect, useState } from "react";
@@ -168,7 +167,6 @@ export function DashboardConfiguracionTienda() {
         </form>
       </Form>
 
-      <Toaster />
     </div>
   );
 }

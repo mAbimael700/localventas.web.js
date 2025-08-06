@@ -1,5 +1,4 @@
 import { createContext, useEffect, useReducer } from "react";
-import { Toaster } from "@/components/ui/Toaster";
 import { toast } from "@/components/ui/use-toast";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../../auth/auth-provider";
@@ -132,8 +131,6 @@ export const CommerceProvider = ({ children }) => {
   return (
     <CommerceContext.Provider value={values}>
       {children}
-
-      <Toaster />
     </CommerceContext.Provider>
   );
 };
