@@ -6,11 +6,11 @@ import {
   columnProductOptions,
 } from "../../../components/dashboard/productos/productos-columns.jsx";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { getMarcasByTienda } from "../../../services/marcas.jsx";
-import { getCategoriasByTienda } from "../../../services/categorias.jsx";
+import { getMarcasByTienda } from "../../../services/marcas.js";
+import { getCategoriasByTienda } from "../../../services/categorias.js";
 import { useAuth } from "../../../auth/auth-provider.jsx";
 import { useEffect, useState } from "react";
-import { getProductosByTienda } from "../../../services/productos.jsx";
+import { getProductosByTienda } from "../../../services/productos.js";
 
 
 function flattenCategories(data, parentID = null) {
