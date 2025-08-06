@@ -25,7 +25,7 @@ export function getAbonosByVenta({ tiendaId, ventaId, accessToken }) {
   return response;
 }
 
-export function getAbonoById({ tiendaId, ventaId, abonoId, accessToken }) {
+export function getAbonoById({ tiendaId, abonoId, accessToken }) {
   const response = fetch(
     `${API_URL}/tiendas/${tiendaId}/abonos/${abonoId}`,
     {

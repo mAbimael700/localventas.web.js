@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { API_URL } from "../auth/constants";
 
 export async function getTransactions({ accessToken }) {
