@@ -1,7 +1,5 @@
 import { DataTableColumnHeader } from "../data-table-columns-header";
 import { Link, useParams } from "react-router-dom";
-import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { UserInfo } from "../../user/user-info";
 import { buttonVariants } from "@/components/ui/button";

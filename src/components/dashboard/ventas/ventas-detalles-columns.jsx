@@ -2,9 +2,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { rowCurrencyFormat } from "../data-table/data-table-currency-format";
 import { QuestionMarkCircledIcon } from "@radix-ui/react-icons";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Separator } from "@/components/ui/separator";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/Badge";
+import { Badge } from "@/components/ui/badge";
 import { currencyFormat } from "../../commerce/productos/producto-card";
 
 export function ventasDetallesColumns(totalProductos = 0) {
