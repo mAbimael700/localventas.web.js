@@ -5,20 +5,15 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    proxy:{
-      '/api': {
-        target: 'http://localhost:5000',
-        changeOrigin : true,
-        secure: false 
-      }
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+      '@': path.resolve(__dirname, './src')
     }
   },
-  resolve:{
-    alias:{
-      "@": path.resolve(__dirname, "./src"),
-    },
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
-
+  esbuild: {
+    loader: 'jsx',
+    include: /src\/.*\.[jt]sx?$/,
+    exclude: []
   }
 })
