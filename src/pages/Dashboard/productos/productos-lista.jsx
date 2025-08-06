@@ -12,6 +12,25 @@ import { useAuth } from "../../../auth/auth-provider";
 import { useEffect, useState } from "react";
 import { getProductosByTienda } from "../../../services/productos";
 
+
+function flattenCategories(data, parentID = null) {
+  let flatList = [];
+  data.forEach((category) => {
+    flatList.push({
+      cve_categoria: category.cve_categoria,
+      nombre: category.nombre,
+      cve_categoria_padre: parentID,
+    });
+    if (Array.isArray(category.children) && category.children.length > 0) {
+      flatList = flatList.concat(
+        flattenCategories(category.children, category.cve_categoria)
+      );
+    }
+  });
+  return flatList;
+}
+
+
 export const ProductosList = () => {
   const { tienda } = useParams();
   const { getAccessToken } = useAuth();
@@ -49,7 +68,9 @@ export const ProductosList = () => {
     };
 
     getMarcas();
-  }, [getAccessToken(), tienda, marcaPosted]);
+  }, [tienda, marcaPosted, token]);
+
+  
 
   useEffect(() => {
     // Obtener categorias
@@ -62,22 +83,7 @@ export const ProductosList = () => {
       if (categoriasResponse.ok) {
         const categoriasData = await categoriasResponse.json();
 
-        function flattenCategories(data, parentID = null) {
-          let flatList = [];
-          data.forEach((category) => {
-            flatList.push({
-              cve_categoria: category.cve_categoria,
-              nombre: category.nombre,
-              cve_categoria_padre: parentID,
-            });
-            if (category.children) {
-              flatList = flatList.concat(
-                flattenCategories(category.children, category.cve_categoria)
-              );
-            }
-          });
-          return flatList;
-        }
+        // Declarar la función flattenCategories en la raíz del cuerpo de la función useEffect
 
         // Generar la lista plana de categorías
         const flatCategories = flattenCategories(categoriasData.body);
@@ -90,7 +96,7 @@ export const ProductosList = () => {
     }
 
     getCategorias();
-  }, [getAccessToken(), tienda, categoriaPosted]);
+  }, [getAccessToken(), tienda, categoriaPosted, token]);
 
   useEffect(() => {
     // Una vez que se obtienen tanto las marcas como las categorias, generar las opciones para la tabla
@@ -121,8 +127,6 @@ export const ProductosList = () => {
 
   return (
     <div className="relative">
-      
-
       <Button
         className="h-8 p-2 absolute font-semibold -top-1 right-2 hidden"
         asChild
