@@ -6,7 +6,6 @@ import { VentasHistorial } from "../pages/Dashboard/ventas/ventas-historial";
 import { ProductosMenu } from "../pages/Dashboard/productos-menu";
 import { ProductosList } from "../pages/dashboard/productos/productos-lista";
 import { ProductosMarcas } from "../pages/dashboard/productos/productos-marcas";
-import { ProductosNuevoForm } from "../pages/dashboard/productos/productos-nuevo-form";
 import { ProductosCategorias } from "../pages/dashboard/productos/productos-categorias";
 import ProtectedRoute from "../components/protected-route/protected-route";
 import { MainDashboardMenu } from "../pages/dashboard/main-dashboard-menu";
@@ -28,10 +27,10 @@ import { DashboardConfiguracionMenu } from "../pages/dashboard/configuracion/con
 import { DashboardConfiguracionTienda } from "../pages/dashboard/configuracion/configuracion-tienda";
 import { DashboardConfiguracionDirecciones } from "../pages/dashboard/configuracion/configuracion-direcciones";
 import { PedidosLista } from "../pages/dashboard/pedidos/pedidos-lista";
-import { PedidosForm } from "../pages/dashboard/pedidos/pedidos-form";
 import { PedidosRegistrar } from "../pages/dashboard/pedidos/pedidos-registrar";
 import { PedidosActualizar } from "../pages/dashboard/pedidos/pedidos-actualizar";
 import { ConfiguracionHorariosEntrega } from "../pages/dashboard/configuracion/configuracion-horarios-entrega";
+
 export const routesDashboard = {
   path: "/",
   element: <ProtectedRoute />,

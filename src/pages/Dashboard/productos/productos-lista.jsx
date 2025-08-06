@@ -11,7 +11,6 @@ import { getCategoriasByTienda } from "../../../services/categorias";
 import { useAuth } from "../../../auth/auth-provider";
 import { useEffect, useState } from "react";
 import { getProductosByTienda } from "../../../services/productos";
-import { ProductosMenubar } from "../../../components/dashboard/productos/productos-menubar";
 
 export const ProductosList = () => {
   const { tienda } = useParams();
